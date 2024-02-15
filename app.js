@@ -15,7 +15,7 @@ const userRoutes=require('./api/routes/user');
 // mongoose.connect("mongodb+srv://root:"+ process.env.MONGO_CODE+"@cluster0.3mzwldy.mongodb.net/?retryWrites=true&w=majority",{
 // })
 
-mongoose.connect("mongodb+srv://shivanis:LGnKDLqr8AK1z50M@cluster0.bddbnlp.mongodb.net/ecommerse?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://shivanis:"+process.env.MONGO_CODE+ "@cluster0.bddbnlp.mongodb.net/ecommerse?retryWrites=true&w=majority",{
 })
 
 mongoose.Promise=global.Promise;

@@ -36,7 +36,7 @@ router.get('/',productController.get_all_products)
 router.post('/',checkAuth,upload.single('productImage'),productController.create_new_product)
 
 
-router.get('/:productId',productController.get_product)
+// router.get('/:productId',productController.get_product)
 
 
 router.patch('/:productId',productController.update_product);
@@ -98,7 +98,7 @@ router.delete('/:productId',(req,res,next)=>{
 // })
 
 
-router.get('/list/search', async (req, res) => {
+router.get('/search', async (req, res) => {
     try {
         const { name } = req.query;
         // const name="book";

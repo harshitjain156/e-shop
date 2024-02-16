@@ -9,7 +9,7 @@ exports.get_all_products=(req,res,next)=>{
             products:docs.map(
                 doc=>{
                     return{
-                        id:doc._id,
+                        _id:doc._id,
                         name:doc.name,
                         price:doc.price,
                         image:doc.image,

@@ -3,7 +3,7 @@ const app=express();
 const morgan=require('morgan')
 const bodyParser=require('body-parser');
 const mongoose=require('mongoose')
-
+const cartRoutes=require('./api/routes/cart')
 const productRoutes=require('./api/routes/product');
 const orderRoutes=require('./api/routes/order');
 const userRoutes=require('./api/routes/user');
@@ -35,6 +35,7 @@ app.use((req,res,next)=>{
 })
 
 app.use('/products',productRoutes);
+app.use('/cart',cartRoutes);
 app.use('/orders',orderRoutes);
 app.use('/users',userRoutes);
 app.use((req,res,next)=>{

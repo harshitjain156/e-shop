@@ -13,7 +13,7 @@ router.get('/mycart/:userId',async (req, res) => {
 
         //checking if the cart exist with this userId or not
         let findCart = await cartModel.findOne({ userId: userId }).populate('items.productId');
-        if (!findCart) return res.status(404).send({ status: false, message: `No cart found with this "${userId}" userId` });
+        if (!findCart) return res.status(241).send({ status: false, message: `No cart found with this "${userId}" userId` });
 
         res.status(200).send({ status: true, message: "Success", data: findCart })
     } catch (err) {

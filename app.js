@@ -7,7 +7,7 @@ const mongoose=require('mongoose')
 const productRoutes=require('./api/routes/product');
 const orderRoutes=require('./api/routes/order');
 const userRoutes=require('./api/routes/user');
-
+const cartRoutes=require('./api/routes/cart')
 // mongoose.connect("mongodb+srv://harshit:"+ process.env.MONGO_CODE+"@node-api.zoehoyl.mongodb.net/?retryWrites=true&w=majority",{
 // })
 
@@ -33,7 +33,7 @@ app.use((req,res,next)=>{
     }
     next();
 })
-
+app.use('/cart',cartRoutes);
 app.use('/products',productRoutes);
 app.use('/orders',orderRoutes);
 app.use('/users',userRoutes);
